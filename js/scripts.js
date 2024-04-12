@@ -1,12 +1,3 @@
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -29,15 +20,6 @@ window.addEventListener('DOMContentLoaded', event => {
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
-    //  Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
-        });
-    };
-
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
@@ -51,4 +33,51 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Cargar Items del navbar
+    // Selecciona el elemento del menú
+    const menu = document.querySelector('#navbarResponsive ul');
+
+    // Limpia el menú existente
+    menu.innerHTML = '';
+
+    // Genera los items del menú
+    Constants.navbarItems.forEach(item => {
+        const li = document.createElement('li');
+        li.classList.add('nav-item');
+
+        const a = document.createElement('a');
+        a.classList.add('nav-link');
+        a.href = item.href;
+        a.textContent = item.title;
+
+        li.appendChild(a);
+        menu.appendChild(li);
+    });
+
+    document.querySelector('#welcome').innerHTML = Constants.welcome;
+    document.querySelector('#slogan').innerHTML = Constants.slogan;
+    document.querySelector('#servicesTitle').innerHTML = Constants.servicesTitle;
+
+    getServices().then(data => {
+        const { result } = data
+        
+        let html = ``;
+        for(let item of result){
+            html += `
+                <div class="col-md-4 mx-auto">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas ${item.icono} fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">${item.nombre}</h4>
+                    <p class="text-muted">${item.descripcion}</p>
+                </div>
+            `;
+        }
+
+        document.getElementById('servicesList').innerHTML = html;
+
+    })
+    .catch(error => console.error(error));
+    
 });
