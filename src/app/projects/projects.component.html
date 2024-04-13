@@ -1,10 +1,10 @@
-<section class="projects">
+<section id="projects" class="projects">
     <p class="title primary">Proyectos</p>
     <p class="subtitle">{{description}}</p>
 
     <div class="grid">
         <div class="col-12">
-            <p-carousel styleClass="projects-main-carousel" [style]="{ width: '100%' }" [value]="list" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="carousel">
+            <p-carousel styleClass="projects-main-carousel" [style]="{ width: '100%' }" [value]="list" [numVisible]="3" [numScroll]="1" [circular]="false" [responsiveOptions]="carousel">
                 <ng-template let-proyecto pTemplate="item">
                     <section class="card-body">
                         <div class="carousel-container">

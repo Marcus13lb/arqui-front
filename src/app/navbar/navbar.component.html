@@ -2,7 +2,7 @@
     <img src="assets/images/logo.png" alt="Caza">
     <ul class="items">
         <li *ngFor="let item of items">
-            <a href="#{{item.href}}">
+            <a (click)="scrollToElement(item.id)">
                 {{item.title}}
             </a>
         </li>

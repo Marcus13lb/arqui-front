@@ -8,4 +8,11 @@ import { NAVBAR_ITEMS } from 'src/utils/constants';
 })
 export class NavbarComponent {
   items: any = NAVBAR_ITEMS;
+
+  scrollToElement(id:string) {
+    var element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  }
 }

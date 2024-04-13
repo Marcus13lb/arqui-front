@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { FACEBOOK, INSTAGRAM, SOBRENOSOTROS } from 'src/utils/constants';
+import { EMAIL, FACEBOOK, INSTAGRAM, SOBRENOSOTROS, TELEFONO, UBICACION, UBICACION_DIRECCION } from 'src/utils/constants';
 
 @Component({
   selector: 'app-footer',
@@ -13,4 +13,8 @@ export class FooterComponent {
   facebook = FACEBOOK
   instagram = INSTAGRAM
   nosotros = SOBRENOSOTROS
+  email = EMAIL
+  telefono = TELEFONO
+  direccion = UBICACION_DIRECCION
+  maps = UBICACION
 }

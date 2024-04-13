@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment.development';
+import { EMAIL, TELEFONO } from 'src/utils/constants';
 
 @Component({
   selector: 'app-contact-top',
@@ -7,5 +7,6 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./contact-top.component.scss']
 })
 export class ContactTopComponent {
-  environment = environment;
+  email = EMAIL
+  telefono = TELEFONO
 }

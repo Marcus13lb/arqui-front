@@ -8,4 +8,11 @@ import { SLOGAN } from 'src/utils/constants';
 })
 export class HeaderComponent {
   slogan = SLOGAN;
+
+  scrollToElement(id:string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: "smooth"});
+    }
+  }
 }

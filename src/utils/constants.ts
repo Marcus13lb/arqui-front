@@ -1,15 +1,17 @@
+import { environment } from "src/environments/environment.development"
+
 export const NAVBAR_ITEMS = [
     {
         title: 'Servicios',
-        href: 'servicios',
+        id: 'services',
     },
     {
         title: 'Proyectos',
-        href: 'proyectos',
+        id: 'projects',
     },
     {
         title: 'Contacto',
-        href: 'contacto',
+        id: 'contact',
     },
 ]
 
@@ -20,9 +22,18 @@ export const SERVICES_DESCRIPTION = 'En esta sección, encontrarás una gama div
 export const PROJECTS_DESCRIPTION = 'En esta sección, podrás ver los trabajos realizados a nuestros clientes'
 
 export const FACEBOOK = 'https://facebook.com'
+
 export const INSTAGRAM = 'https://instagram.com'
 
-export const SOBRENOSOTROS = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+export const TELEFONO = '595972413798'
+
+export const EMAIL = 'larreadg@gmail.com'
+
+export const UBICACION = 'https://maps.app.goo.gl/4U3GQRwrqTt2FG1Y6'
+
+export const UBICACION_DIRECCION = 'LA BOMBA Ñemby, Ruta PY01'
+
+export const SOBRENOSOTROS = `En ${environment.app}, creemos que la arquitectura es el arte de crear espacios que inspiran, conectan y perduran. Nuestra empresa se fundó con la visión de transformar el paisaje urbano a través de diseños innovadores y construcciones de calidad superior.` 
 
 export const CAROUSEL_CONF = [
     {

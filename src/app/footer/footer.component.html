@@ -5,13 +5,17 @@
                 <div class="grid">
                     <div class="col-12">
                         <p class="title-footer">CONTACTO</p>
-                        <a class="contacto" href="https://wa.me/{{environment.telefono}}">
+                        <a target="_blank" class="contacto" href="https://wa.me/{{telefono}}">
                             <i class="pi pi-whatsapp"></i>
-                            <p>{{environment.telefono}}</p>
+                            <p>{{telefono}}</p>
                         </a>
-                        <a class="contacto" href="mailto:{{environment.email}}">
+                        <a target="_blank" class="contacto" href="mailto:{{email}}">
                             <i class="pi pi-at"></i>
-                            <p>{{environment.email}}</p>
+                            <p>{{email}}</p>
+                        </a>
+                        <a target="_blank" class="contacto" href="{{maps}}">
+                            <i class="pi pi-map-marker"></i>
+                            <p>{{direccion}}</p>
                         </a>
                     </div>
                 </div>
