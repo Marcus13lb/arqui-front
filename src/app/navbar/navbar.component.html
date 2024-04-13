@@ -1,0 +1,10 @@
+<nav class="navbar">
+    <img src="assets/images/logo.png" alt="Caza">
+    <ul class="items">
+        <li *ngFor="let item of items">
+            <a href="#{{item.href}}">
+                {{item.title}}
+            </a>
+        </li>
+    </ul>
+</nav>

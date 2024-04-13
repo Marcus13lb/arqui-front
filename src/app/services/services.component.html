@@ -1,0 +1,14 @@
+<section class="services">
+    <p class="title">Servicios</p>
+    <p class="subtitle">{{description}}</p>
+
+    <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div *ngFor="let servicio of list" class="col-12 sm:col-6 xl:col-4" style="flex: 0 0 auto;">
+            <section class="card-body">
+                <p-avatar [style]="{ 'backgroundColor': 'var(--primary-color)', 'color': 'var(--surface-800)' }" shape="circle" icon="pi {{servicio.icono}}" size="xlarge"></p-avatar>
+                <p class="card-body-title">{{servicio.nombre}}</p>
+                <p class="card-body-description">{{servicio.descripcion}}</p>
+            </section>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+section.contact-top {
+    align-items: center;
+    background-color: var(--primary-color);
+    display: flex;
+    height: 35px;
+    justify-content: space-between;
+
+    .item {
+        align-items: center;
+        color: var(--text-color);
+        display: flex;
+        margin: 0 1rem;
+        
+        i {
+            margin-right: 0.5rem;
+        }
+    }
+    
+    .paraguayo {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+
+        p {
+            margin: 0;
+        }
+
+        .muscle {
+            width: 20px;
+            height: auto;
+        }
+        
+    }
+}

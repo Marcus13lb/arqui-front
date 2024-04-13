@@ -1,0 +1,46 @@
+<section class="projects">
+    <p class="title primary">Proyectos</p>
+    <p class="subtitle">{{description}}</p>
+
+    <div class="grid">
+        <div class="col-12">
+            <p-carousel styleClass="projects-main-carousel" [style]="{ width: '100%' }" [value]="list" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="carousel">
+                <ng-template let-proyecto pTemplate="item">
+                    <section class="card-body">
+                        <div class="carousel-container">
+                            <p-carousel [showIndicators]="false" [style]="{ width: '100%' }" [value]="proyecto.fotos" [numVisible]="1" [numScroll]="1" [circular]="true">
+                                <ng-template let-foto pTemplate="item">
+                                    <img (click)="verFoto(foto)" class="project-image" [src]="environment.apiUrl + '/public/' + foto" alt="{{foto}}">
+                                </ng-template>
+                            </p-carousel>
+                        </div>
+                        <p class="card-body-title">{{proyecto.nombre}}</p>
+                        <p class="card-body-description">{{proyecto.descripcion}}</p>
+                    </section>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+    <!-- <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div *ngFor="let proyecto of list" class="col-12 sm:col-6 xl:col-4" style="flex: 0 0 auto;">
+            <section class="card-body">
+                <div class="carousel-container">
+                    <p-carousel [style]="{ width: '100%' }" [value]="proyecto.fotos" [numVisible]="1" [numScroll]="1" [circular]="true">
+                        <ng-template let-foto pTemplate="item">
+                            <img (click)="verFoto(foto)" class="project-image" [src]="environment.apiUrl + '/public/' + foto" alt="{{foto}}">
+                        </ng-template>
+                    </p-carousel>
+                </div>
+                <p class="card-body-title">{{proyecto.nombre}}</p>
+                <p class="card-body-description">{{proyecto.descripcion}}</p>
+            </section>
+        </div>
+    </div> -->
+</section>
+
+<p-sidebar (onHide)="showFullScreen = false" [fullScreen]="true" [visible]="showFullScreen" [closeOnEscape]="true" [blockScroll]="true">
+    <section class="fullscreen-container">
+        <!-- <p-button (onClick)="showFullScreen = false" icon="pi pi-check" styleClass="p-button-text"></p-button> -->
+        <img class="fullscreen-img" [src]="photo" alt="Photo">
+    </section>
+</p-sidebar>

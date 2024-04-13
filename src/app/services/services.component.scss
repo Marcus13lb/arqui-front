@@ -1,0 +1,24 @@
+section.services {
+    background-color: var(--surface-800);
+    padding: 2rem 2rem;
+}
+
+.card-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+
+    .card-body-title {
+        color: var(--surface-0);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    .card-body-description {
+        color: var(--surface-100);
+        text-align: justify;
+    }
+}

@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./globals.scss";
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    color: var(--surface-0);
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    &.primary {
+        color: var(--primary-color);
+    }
+}
+
+.subtitle {
+    color: var(--surface-100);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.card-service {
+    background-color: var(--surface-800);
+    box-shadow: none;
+    color: var(--surface-0);
+}
+
+.card-project {
+    background-color: var(--surface-0);
+    box-shadow: none;
+    color: var(--surface-800);
+}
+
+.project-image {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+.projects-main-carousel {
+    .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
+        color: var(--primary-color);
+    }
+}
