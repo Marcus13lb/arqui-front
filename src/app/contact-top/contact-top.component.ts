@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EMAIL, TELEFONO } from 'src/utils/constants';
+import { DataService } from '../api/data.service';
 
 @Component({
   selector: 'app-contact-top',
@@ -7,6 +7,15 @@ import { EMAIL, TELEFONO } from 'src/utils/constants';
   styleUrls: ['./contact-top.component.scss']
 })
 export class ContactTopComponent {
-  email = EMAIL
-  telefono = TELEFONO
+  email : any = null 
+  telefono : any = null 
+
+  constructor(private dataService: DataService){
+    this.dataService.data.subscribe(data => {
+      if(data !== null){
+        this.email = data.find((el:any) => el.clave === 'email').valor;
+        this.telefono = data.find((el:any) => el.clave === 'telefono').valor;
+      }
+    })
+  }
 }

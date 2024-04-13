@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SLOGAN } from 'src/utils/constants';
+import { DataService } from '../api/data.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,15 @@ import { SLOGAN } from 'src/utils/constants';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  slogan = SLOGAN;
+  slogan = null;
+
+  constructor(private dataService: DataService){
+    this.dataService.data.subscribe(data => {
+      if(data !== null){
+        this.slogan = data.find((el:any) => el.clave === 'slogan').valor;
+      }
+    })
+  }
 
   scrollToElement(id:string) {
     const element = document.getElementById(id);

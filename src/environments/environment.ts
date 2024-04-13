@@ -1,6 +1,4 @@
 export const environment = {
-    apiUrl: 'http://localhost:8000',
+    apiUrl: 'https://seguridad.personal.com.py/test/cz',
     app: 'Caza Constructora',
-    telefono: '595972413798',
-    email: 'larreadg@gmail.com'
 };

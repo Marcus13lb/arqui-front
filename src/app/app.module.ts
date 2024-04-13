@@ -19,6 +19,39 @@ import { AvatarModule } from 'primeng/avatar';
 import { CarouselModule } from 'primeng/carousel';
 import { SidebarModule } from 'primeng/sidebar';
 import { DialogModule } from 'primeng/dialog'
+import { NgxUiLoaderConfig, NgxUiLoaderModule } from 'ngx-ui-loader';
+
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  "bgsColor": "#4f46e5",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 60,
+  "bgsType": "ball-spin-clockwise",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "#4f46e5",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "double-bounce",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(255,255,255,1)",
+  "pbColor": "#4f46e5",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+}
 
 @NgModule({
   declarations: [
@@ -39,6 +72,7 @@ import { DialogModule } from 'primeng/dialog'
     CarouselModule,
     SidebarModule,
     DialogModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     HttpClientModule,
     AppRoutingModule
   ],
