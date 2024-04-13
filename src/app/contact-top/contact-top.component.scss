@@ -1,18 +1,28 @@
+@import "../../globals.scss";
+
 section.contact-top {
     align-items: center;
     background-color: var(--primary-color);
     display: flex;
     height: 35px;
-    justify-content: space-between;
+    justify-content: center;
+
+    @media screen and (min-width: $md) {
+        justify-content: space-between;
+    }
 
     .item {
         align-items: center;
         color: var(--text-color);
-        display: flex;
+        display: none;
         margin: 0 1rem;
         
         i {
             margin-right: 0.5rem;
+        }
+
+        @media screen and (min-width: $md) {
+            display: flex;
         }
     }
     

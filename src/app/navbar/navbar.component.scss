@@ -1,3 +1,5 @@
+@import "../../globals.scss";
+
 nav.navbar {
     align-items: center;
     background-color: var(--surface-800);
@@ -12,10 +14,14 @@ nav.navbar {
     }
 
     .items {
-        display: flex;
+        display: none;
         gap: 1rem;
         list-style-type: none;
         margin: 0 1rem;
+
+        @media screen and (min-width: $md) {
+            display: flex;
+        }
 
         li a {
             cursor: pointer;
@@ -25,6 +31,13 @@ nav.navbar {
             &:hover {
                 color: var(--primary-color);
             }
+        }
+    }
+
+    button {
+        margin: 0 1rem;
+        @media screen and (min-width: $md) {
+            display: none;
         }
     }
 }
@@ -61,5 +74,36 @@ nav.navbar {
             }
         }
 
+    }
+}
+
+.sidebar-menu {
+
+    .img-container {
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        img {
+            width: 80%;
+            height: auto;
+        }
+    }
+
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+        
+        li {
+
+            padding: 0.5rem 0;
+
+            a {
+                font-weight: 500;
+                cursor: pointer;
+                color: var(--surface-0);
+                font-size: 1.25rem;
+            }
+        }
     }
 }

@@ -1,6 +1,12 @@
+@import "../../globals.scss";
+
 section.services {
     background-color: var(--surface-800);
-    padding: 2rem 2rem;
+    padding: 1rem 0.5rem;
+    
+    @media screen and (min-width: $md) {
+        padding: 2rem;
+    }
 }
 
 .card-body {

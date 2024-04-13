@@ -13,9 +13,10 @@ export class NavbarComponent {
   direccion = UBICACION_DIRECCION
   maps = UBICACION
   showContact : boolean = false
+  showMenu: boolean = false
 
   scrollToElement(id:string) {
-
+    this.showMenu = false
     if(id === 'contact') this.showContact = true
     else {
       const element = document.getElementById(id);

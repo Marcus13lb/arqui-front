@@ -7,6 +7,7 @@
             </a>
         </li>
     </ul>
+    <button (click)="showMenu = true" pButton pRipple label="Menú" class="p-button-sm" icon="pi pi-bars"></button>
 </nav>
 
 <p-dialog styleClass="modal modal-contacto" header="Contacto" [(visible)]="showContact" [modal]="true">
@@ -28,3 +29,18 @@
         </section>
     </section>
 </p-dialog>
+
+<p-sidebar styleClass="menu-mobile" (onHide)="showMenu = false" [position]="'right'" [visible]="showMenu" [closeOnEscape]="true" [blockScroll]="true">
+    <section class="sidebar-menu">
+        <div class="img-container">
+            <img src="assets/images/logo.png" alt="Caza">
+        </div>
+        <ul>
+            <li *ngFor="let item of items">
+                <a (click)="scrollToElement(item.id)">
+                    {{item.title}}
+                </a>
+            </li>
+        </ul>
+    </section>
+</p-sidebar>
