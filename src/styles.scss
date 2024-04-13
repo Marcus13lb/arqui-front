@@ -57,3 +57,30 @@ a {
         color: var(--primary-color);
     }
 }
+
+.modal {
+
+    width: 100%;
+    @media screen and (min-width: $sm){
+      width: 70vw;
+    }
+    @media screen and (min-width: $md){
+      width: 60vw;
+    }
+    @media screen and (min-width: $lg){
+      width: 40vw;
+    }
+    @media screen and (min-width: $xl){
+      width: 40vw;
+    }
+
+}
+
+.modal-contacto .p-dialog-header, .modal-contacto .p-dialog-content {
+    color: var(--surface-0);
+    background-color: var(--surface-800) !important; 
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+    color: var(--primary-color) !important;
+}

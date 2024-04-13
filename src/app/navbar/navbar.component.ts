@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NAVBAR_ITEMS } from 'src/utils/constants';
+import { EMAIL, NAVBAR_ITEMS, TELEFONO, UBICACION, UBICACION_DIRECCION } from 'src/utils/constants';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +7,21 @@ import { NAVBAR_ITEMS } from 'src/utils/constants';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  items: any = NAVBAR_ITEMS;
+  items: any = NAVBAR_ITEMS
+  email = EMAIL
+  telefono = TELEFONO
+  direccion = UBICACION_DIRECCION
+  maps = UBICACION
+  showContact : boolean = false
 
   scrollToElement(id:string) {
-    var element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({behavior: "smooth"});
+
+    if(id === 'contact') this.showContact = true
+    else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({behavior: "smooth"});
+      }
     }
   }
 }

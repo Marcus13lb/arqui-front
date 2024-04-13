@@ -8,3 +8,23 @@
         </li>
     </ul>
 </nav>
+
+<p-dialog styleClass="modal modal-contacto" header="Contacto" [(visible)]="showContact" [modal]="true">
+    <section class="contacto">
+        <img src="assets/images/logo.png" alt="Logo">
+        <section class="links">
+            <a target="_blank" class="link" href="https://wa.me/{{telefono}}">
+                <i class="pi pi-whatsapp"></i>
+                <p>{{telefono}}</p>
+            </a>
+            <a target="_blank" class="link" href="mailto:{{email}}">
+                <i class="pi pi-at"></i>
+                <p>{{email}}</p>
+            </a>
+            <a target="_blank" class="link" href="{{maps}}">
+                <i class="pi pi-map-marker"></i>
+                <p>{{direccion}}</p>
+            </a>
+        </section>
+    </section>
+</p-dialog>
