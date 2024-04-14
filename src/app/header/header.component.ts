@@ -12,7 +12,7 @@ export class HeaderComponent {
   constructor(private dataService: DataService){
     this.dataService.data.subscribe(data => {
       if(data !== null){
-        this.slogan = data.find((el:any) => el.clave === 'slogan').valor;
+        this.slogan = data.find((el:any) => el.clave === 'slogan')?.valor;
       }
     })
   }

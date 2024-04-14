@@ -13,8 +13,8 @@ export class ContactTopComponent {
   constructor(private dataService: DataService){
     this.dataService.data.subscribe(data => {
       if(data !== null){
-        this.email = data.find((el:any) => el.clave === 'email').valor;
-        this.telefono = data.find((el:any) => el.clave === 'telefono').valor;
+        this.email = data.find((el:any) => el.clave === 'email')?.valor;
+        this.telefono = data.find((el:any) => el.clave === 'telefono')?.valor;
       }
     })
   }

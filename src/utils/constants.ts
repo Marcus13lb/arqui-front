@@ -2,14 +2,17 @@ export const NAVBAR_ITEMS = [
     {
         title: 'Servicios',
         id: 'services',
+        icon: 'pi pi-star'
     },
     {
         title: 'Proyectos',
         id: 'projects',
+        icon: 'pi pi-flag'
     },
     {
         title: 'Contacto',
         id: 'contact',
+        icon: 'pi pi-phone'
     },
 ]
 

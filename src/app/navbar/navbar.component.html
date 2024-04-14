@@ -1,5 +1,8 @@
 <nav class="navbar">
-    <img src="assets/images/logo.png" alt="Caza">
+    <span>
+        <img class="caza" src="assets/images/logo.png" alt="Caza">
+        <img class="safi" src="assets/images/safi_logo.png" alt="Safi">
+    </span>
     <ul class="items">
         <li *ngFor="let item of items">
             <a (click)="scrollToElement(item.id)">
@@ -12,7 +15,10 @@
 
 <p-dialog styleClass="modal modal-contacto" header="Contacto" [(visible)]="showContact" [modal]="true">
     <section class="contacto">
-        <img src="assets/images/logo.png" alt="Logo">
+        <span>
+            <img class="caza" src="assets/images/logo.png" alt="Logo">
+            <img class="safi" src="assets/images/safi_logo.png" alt="Safi">
+        </span>
         <section class="links">
             <a target="_blank" class="link" href="https://wa.me/{{telefono}}">
                 <i class="pi pi-whatsapp"></i>
@@ -33,11 +39,13 @@
 <p-sidebar styleClass="menu-mobile" (onHide)="showMenu = false" [position]="'right'" [visible]="showMenu" [closeOnEscape]="true" [blockScroll]="true">
     <section class="sidebar-menu">
         <div class="img-container">
-            <img src="assets/images/logo.png" alt="Caza">
+            <img class="caza" src="assets/images/logo.png" alt="Logo">
+            <img class="safi" src="assets/images/safi_logo.png" alt="Safi">
         </div>
         <ul>
             <li *ngFor="let item of items">
                 <a (click)="scrollToElement(item.id)">
+                    <i [className]="item.icon"></i>
                     {{item.title}}
                 </a>
             </li>

@@ -17,17 +17,19 @@ export class FooterComponent {
   telefono = null
   direccion = null
   maps = null
+  app = null
 
   constructor(private dataService: DataService){
     this.dataService.data.subscribe(data => {
       if(data !== null){
-        this.facebook = data.find((el:any) => el.clave === 'facebook').valor;
-        this.instagram = data.find((el:any) => el.clave === 'instagram').valor;
-        this.nosotros = data.find((el:any) => el.clave === 'sobre_nosotros').valor;
-        this.email = data.find((el:any) => el.clave === 'email').valor;
-        this.telefono = data.find((el:any) => el.clave === 'telefono').valor;
-        this.maps = data.find((el:any) => el.clave === 'ubicacion_url').valor;
-        this.direccion = data.find((el:any) => el.clave === 'direccion').valor;
+        this.facebook = data.find((el:any) => el.clave === 'facebook')?.valor;
+        this.instagram = data.find((el:any) => el.clave === 'instagram')?.valor;
+        this.nosotros = data.find((el:any) => el.clave === 'sobre_nosotros')?.valor;
+        this.email = data.find((el:any) => el.clave === 'email')?.valor;
+        this.telefono = data.find((el:any) => el.clave === 'telefono')?.valor;
+        this.maps = data.find((el:any) => el.clave === 'ubicacion_url')?.valor;
+        this.direccion = data.find((el:any) => el.clave === 'direccion')?.valor;
+        this.app = data.find((el:any) => el.clave === 'app')?.valor;
       }
     })
   }

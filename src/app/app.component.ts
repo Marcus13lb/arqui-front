@@ -14,8 +14,14 @@ export class AppComponent implements OnInit {
   
   spinner = SPINNER;
   data: any = null;
-  constructor(title: Title, private dataService: DataService, private loader: NgxUiLoaderService){
-    title.setTitle(environment.app)
+  constructor(private title: Title, private dataService: DataService, private loader: NgxUiLoaderService){
+
+    this.dataService.data.subscribe(data => {
+      if(data !== null){
+        const app = data.find((el:any) => el.clave === 'app')?.valor;
+        this.title.setTitle(app)
+      }
+    })
   }
 
   async ngOnInit() {

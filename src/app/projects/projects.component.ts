@@ -23,7 +23,7 @@ export class ProjectsComponent {
   constructor(private dataService: DataService, private proyectoService: ProyectosService){
     this.dataService.data.subscribe(data => {
       if(data !== null){
-        this.description = data.find((el:any) => el.clave === 'projects_description').valor;
+        this.description = data.find((el:any) => el.clave === 'projects_description')?.valor;
       }
     })
     this.get()

@@ -17,7 +17,7 @@ export class ServicesComponent {
   constructor(private dataService: DataService, private serviciosService: ServiciosService){
     this.dataService.data.subscribe(data => {
       if(data !== null){
-        this.description = data.find((el:any) => el.clave === 'services_description').valor;
+        this.description = data.find((el:any) => el.clave === 'services_description')?.valor;
       }
     })
     this.get()

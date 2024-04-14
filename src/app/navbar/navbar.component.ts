@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { EMAIL, NAVBAR_ITEMS, TELEFONO, UBICACION, UBICACION_DIRECCION } from 'src/utils/constants';
+import { NAVBAR_ITEMS } from 'src/utils/constants';
+import { DataService } from '../api/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,12 +9,23 @@ import { EMAIL, NAVBAR_ITEMS, TELEFONO, UBICACION, UBICACION_DIRECCION } from 's
 })
 export class NavbarComponent {
   items: any = NAVBAR_ITEMS
-  email = EMAIL
-  telefono = TELEFONO
-  direccion = UBICACION_DIRECCION
-  maps = UBICACION
+  email = null
+  telefono = null
+  direccion = null
+  maps = null
   showContact : boolean = false
   showMenu: boolean = false
+
+  constructor(private dataService: DataService){
+    this.dataService.data.subscribe(data => {
+      if(data !== null){
+        this.email = data.find((el:any) => el.clave === 'email')?.valor;
+        this.telefono = data.find((el:any) => el.clave === 'telefono')?.valor;
+        this.maps = data.find((el:any) => el.clave === 'ubicacion_url')?.valor;
+        this.direccion = data.find((el:any) => el.clave === 'direccion')?.valor;
+      }
+    })
+  }
 
   scrollToElement(id:string) {
     this.showMenu = false
