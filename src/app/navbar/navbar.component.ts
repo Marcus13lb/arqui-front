@@ -11,6 +11,8 @@ export class NavbarComponent {
   items: any = NAVBAR_ITEMS
   email = null
   telefono = null
+  email2 = null
+  telefono2 = null
   direccion = null
   maps = null
   showContact : boolean = false
@@ -21,6 +23,8 @@ export class NavbarComponent {
       if(data !== null){
         this.email = data.find((el:any) => el.clave === 'email')?.valor;
         this.telefono = data.find((el:any) => el.clave === 'telefono')?.valor;
+        this.email2 = data.find((el:any) => el.clave === 'email2')?.valor;
+        this.telefono2 = data.find((el:any) => el.clave === 'telefono2')?.valor;
         this.maps = data.find((el:any) => el.clave === 'ubicacion_url')?.valor;
         this.direccion = data.find((el:any) => el.clave === 'direccion')?.valor;
       }

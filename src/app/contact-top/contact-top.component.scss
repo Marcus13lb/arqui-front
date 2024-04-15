@@ -11,20 +11,34 @@ section.contact-top {
         justify-content: space-between;
     }
 
-    .item {
-        align-items: center;
-        color: var(--text-color);
-        display: none;
-        margin: 0 1rem;
+    .group {
+
+        display: flex;
         
-        i {
-            margin-right: 0.5rem;
+        .item {
+            align-items: center;
+            color: var(--text-color);
+            display: none;
+            margin: 0 0.25rem;
+            
+            i {
+                margin-right: 0.25rem;
+                font-size: 12px;
+            }
+    
+            @media screen and (min-width: $lg) {
+                display: flex;
+    
+                p {
+                    font-size: 12px;
+                }
+            }
+    
+            
         }
 
-        @media screen and (min-width: $md) {
-            display: flex;
-        }
     }
+
     
     .paraguayo {
         align-items: center;

@@ -14,26 +14,38 @@
 </nav>
 
 <p-dialog styleClass="modal modal-contacto" header="Contacto" [(visible)]="showContact" [modal]="true">
-    <section class="contacto">
-        <span>
-            <img class="caza" src="assets/images/logo.png" alt="Logo">
-            <img class="safi" src="assets/images/safi_logo.png" alt="Safi">
-        </span>
-        <section class="links">
-            <a target="_blank" class="link" href="https://wa.me/{{telefono}}">
-                <i class="pi pi-whatsapp"></i>
-                <p>{{telefono}}</p>
-            </a>
-            <a target="_blank" class="link" href="mailto:{{email}}">
-                <i class="pi pi-at"></i>
-                <p>{{email}}</p>
-            </a>
-            <a target="_blank" class="link" href="{{maps}}">
-                <i class="pi pi-map-marker"></i>
-                <p>{{direccion}}</p>
-            </a>
-        </section>
-    </section>
+    <div class="grid">
+        <div class="col-12">
+            <section class="contacto-logos">
+                <img src="assets/images/logo.png" alt="Logo">
+                <img src="assets/images/safi_logo.png" alt="Safi">
+            </section>
+        </div>
+        <div class="col-12">
+            <section class="contacto-links">
+                <a target="_blank" class="link" href="https://wa.me/{{telefono}}">
+                    <i class="pi pi-whatsapp"></i>
+                    <p>{{telefono}}</p>
+                </a>
+                <a target="_blank" class="link" href="https://wa.me/{{telefono2}}">
+                    <i class="pi pi-whatsapp"></i>
+                    <p>{{telefono2}}</p>
+                </a>
+                <a target="_blank" class="link" href="mailto:{{email}}">
+                    <i class="pi pi-at"></i>
+                    <p>{{email}}</p>
+                </a>
+                <a target="_blank" class="link" href="mailto:{{email2}}">
+                    <i class="pi pi-at"></i>
+                    <p>{{email2}}</p>
+                </a>
+                <a target="_blank" class="link" href="{{maps}}">
+                    <i class="pi pi-map-marker"></i>
+                    <p>{{direccion}}</p>
+                </a>
+            </section>
+        </div>
+    </div>
 </p-dialog>
 
 <p-sidebar styleClass="menu-mobile" (onHide)="showMenu = false" [position]="'right'" [visible]="showMenu" [closeOnEscape]="true" [blockScroll]="true">

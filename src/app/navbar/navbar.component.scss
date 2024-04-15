@@ -54,43 +54,35 @@ nav.navbar {
     }
 }
 
-.contacto {
+.contacto-logos {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    img {
+        width: 40%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+.contacto-links {
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    span {
+    a {
+        align-items: center;
+        color: var(--surface-0);
         display: flex;
-        justify-content: center;
-        img.caza, img.safi {
-            width: 40%;
-            height: auto;
-            margin-bottom: 1rem;
+
+        i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
         }
     }
 
-    .links {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        
-        .link {
-            align-items: center;
-            display: flex;
-            padding: 0.5rem 0;
-            color: var(--surface-0);
-            width: max-content;
-            i {
-                color: var(--primary-color);
-                margin-right: 0.5rem;
-            }
-    
-            p {
-                margin: 0;
-            }
-        }
-
-    }
 }
 
 .sidebar-menu {
